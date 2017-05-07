@@ -17,7 +17,10 @@ chrome.storage.sync.get(
   {
     "channel_filter": "",
     "video_name_filter": "",
-    "block_minecraft": 1
+    "block_minecraft": 1,
+    "block_YD": 1,
+    "block_Sandbox": 1,
+    "block_Ddotty": 1
   },
   function(Data){
     if(Data.channel_filter.length != 0)
@@ -85,8 +88,8 @@ function ValidateString(Source)
     }
   }
   
-   // 도티?
-  if(DdottyFlag == 1)
+   // 샌드박스?
+  if(SandboxFlag == 1)
   {
     if(/샌드박스/gim.test(Source))
     {
@@ -94,6 +97,34 @@ function ValidateString(Source)
     }
   }
   
+    
+    // 언더테일?
+  if(UndertaleFlag == 1)
+  {
+    if(/언더테일|undertale|Undertale|언더태일|drugtale|glitchtale|Drugtale|Glitchtale/gim.test(Source))
+    {
+      return true;
+    }
+  }
+    
+// 천본앵 PV한정?
+  if(CheonbonaengukilgifuckFlag == 1)
+  {
+    if(/(千本桜&(PV|Promo|Promotional Video)|(Senbonzakura&(PV|Promo|Promotional Video))/gim.test(Source))
+    {
+      return true;
+    }
+  }
+    
+   // 레스토랑스?
+    if(restauranceFlag == 1)
+  {
+    if(/(히어로즈오브더스톰|히어로즈 오브 더 스톰|Heroes of the Storm|Heroesofthestorm|HEROESOFTHESTORM|HEROES OF THE STORM|HOS|hos)/gim.test(Source))
+    {
+      return true;
+    }
+  }
+    
   return false;
 }
 
