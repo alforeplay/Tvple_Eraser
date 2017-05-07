@@ -20,6 +20,7 @@ chrome.storage.sync.get(
     "block_minecraft": 1,
     "block_YD": 1,
     "block_Sandbox": 1,
+    "block_Undertale": 1,
     "block_Ddotty": 1
   },
   function(Data){
@@ -37,6 +38,9 @@ chrome.storage.sync.get(
 	YDFlag = Data.block_YD;
 	DdottyFlag = Data.block_Ddotty;
 	SandboxFlag = Data.block_Sandbox;
+    UndertaleFlag = Data.block_Undertale;
+    CheonbonaengukilgifuckFlag = 1;
+    restauranceFlag = 1;
 });
 
 // Validate String Determines Whether Target String Contains Tvple or Not.
