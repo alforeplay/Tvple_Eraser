@@ -29,9 +29,11 @@
               "128": "Resources/128.png" }
     },
 
-    "options_ui": {
-      "page": "Control/Control-panel.html",
-      "chrome_style": true
+    "_comment": {
+        "options_ui": {
+            "page": "Control/Control-panel.html",
+            "chrome_style": true
+        }
     }
 
 }

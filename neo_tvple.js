@@ -5,7 +5,10 @@
 // Defines Main Pattern for Filters of Filter Logics
 var MainPattern = /(티비|tv).{0,}(플|p(i|l)e)/gim;
 var DescriptionURLPattern = /tvple\.com/gim;
-var MinecraftFlag
+var MinecraftFlag;
+var YDFlag;
+var DdottyFlag;
+var SandboxFlag;
 var SubPatternChannel;
 var SubPatternVideo;
 
@@ -28,6 +31,9 @@ chrome.storage.sync.get(
     }
 
     MinecraftFlag = Data.block_minecraft;
+	YDFlag = Data.block_YD;
+	DdottyFlag = Data.block_Ddotty;
+	SandboxFlag = Data.block_Sandbox;
 });
 
 // Validate String Determines Whether Target String Contains Tvple or Not.
@@ -59,7 +65,35 @@ function ValidateString(Source)
       return true;
     }
   }
-
+  
+  // YD?
+  if(YDFlag == 1)
+  {
+    if(/YD|양띵/gim.test(Source))
+    {
+      return true;
+    }
+  }
+	
+	
+   // 도티?
+  if(DdottyFlag == 1)
+  {
+    if(/도티/gim.test(Source))
+    {
+      return true;
+    }
+  }
+  
+   // 도티?
+  if(DdottyFlag == 1)
+  {
+    if(/샌드박스/gim.test(Source))
+    {
+      return true;
+    }
+  }
+  
   return false;
 }
 
